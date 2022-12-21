@@ -1,6 +1,5 @@
 {
   "name": "todo-list",
-  "homepage": "https://agustincordero.monster/Web3",
   "private": true,
   "scripts": {
     "dev": "next dev",
