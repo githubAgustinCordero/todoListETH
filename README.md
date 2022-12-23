@@ -1,5 +1,19 @@
 DEMO: https://githubagustincordero.github.io/todoListETH/
 
+<Heading>
+    Ejemplo Blockchain-WEB3
+</Heading>
+            
+<h4>Ejemplo de conexión a la red Ethereum (Red Prueba Tesnet Goerli) utilizando tecnología WEB3.</h4>
+            
+Para poder interactuar con ésta aplicación necesitas obtener tokens de la red Goerli. 
+Para obtenerlos gratuitamente puedes acceder aqui he introducir tu wallet:
+https://goerlifaucet.com/ (Seguramente te pida que te registres con un correo en https://alchemy.com/)
+
+<h4>El funcionamiento es simple, una agenda privada para cada persona que se conecta con su wallet.</h4>
+            
+//*******************************************************//
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
