@@ -10,6 +10,8 @@ const Home: NextPage = () => {
   const [addressAccount, setAddresAccount] = React.useState<any>(null);
   const [contract, setContract] = React.useState<any>(null);
   const [tasks, setTasks] = React.useState<any[]>([]);
+  const [showMessage, setShowMessage] = React.useState(false);
+  
 
   
 
@@ -42,27 +44,42 @@ const Home: NextPage = () => {
   return (
     <VStack>
         <Head>
-          <title>Todo List</title>
-          <meta name="description" content="Blockchain TodoList." />
+          <title>Blockchain-WEB3 Lista de Tareas.</title>
+          <meta name="description" content="Blockchain-WEB3 Lista de Tareas." />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <HStack w='full'>
           <Spacer />
           <VStack>
-            <Heading>Blockchain TodoList</Heading>
+            <Heading>
+              Ejemplo Blockchain-WEB3
+            </Heading>
+            
+            <h4>Ejemplo de conexión a la red Ethereum (Red Prueba Tesnet Goerli) utilizando tecnología WEB3.</h4>
+            <Button onClick={() => setShowMessage(!showMessage)}>
+                {showMessage ? 'Ocultar Ayuda' : 'Mostrar Ayuda'}
+              </Button>
+            
+              {showMessage && (
+              <div>Para poder interactuar con ésta aplicación necesitas obtener tokens de la red Goerli. 
+              Para obtenerlos gratuitamente puedes acceder aqui he introducir tu wallet:
+              https://goerlifaucet.com/ (Seguramente te pida que te registres con un correo en https://alchemy.com/)</div>
+              )}
+            <br></br>
+            <h4>El funcionamiento es simple, una agenda privada para cada persona que se conecta con su wallet.</h4>
             <Box h='30px'/>
             <HStack w='md'>
               <Input
               type='text'
               size='md'
-              placeholder='New Task...'
+              placeholder='Nueva tarea...'
               onChange={handleInputChange}
               value={input}
               />
-              <Button onClick={handleAddTask} bg='green.200'>ADD</Button>
+              <Button onClick={handleAddTask} bg='green.200'>Añadir</Button>
             </HStack>
             <Box h='30px' />
-            <Text>ToDO</Text>
+            <Text>Marcar Terminada</Text>
             {
               tasks == null ? <Spinner />
               : tasks.map((task, idx) => !task[2] ?
@@ -70,12 +87,12 @@ const Home: NextPage = () => {
                 <Box w='5px' />
                 <Text>{task[1]}</Text>
                 <Spacer />
-                <Button bg='green.300' onClick={ () => handleToggled(task[0].toNumber()) }>DONE</Button>
+                <Button bg='green.300' onClick={ () => handleToggled(task[0].toNumber()) }>Marcar Terminada</Button>
               </HStack> : null
               )
             }
             <Box h='10px' />
-            <Text>Tasks done</Text>
+            <Text>Desmarcar Terminada</Text>
             {
               tasks == null ? <Spinner /> :
               tasks.map((task, idx) => task[2] ?
@@ -83,7 +100,7 @@ const Home: NextPage = () => {
                 <Box w='5px' />
                 <Text>{task[1]}</Text>
                 <Spacer />
-                <Button bg='red.300' onClick={ () => handleToggled(task[0].toNumber() ) }>UNDONE</Button>
+                <Button bg='red.300' onClick={ () => handleToggled(task[0].toNumber() ) }>Desmarcar Terminada</Button>
               </HStack> : null
               )
             }
