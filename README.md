@@ -1,8 +1,6 @@
 DEMO: https://githubagustincordero.github.io/todoListETH/
 
-<Heading>
-    Ejemplo Blockchain-WEB3
-</Heading>
+## Ejemplo Blockchain-WEB3
             
 <h4>Ejemplo de conexión a la red Ethereum (Red Prueba Tesnet Goerli) utilizando tecnología WEB3.</h4>
             
